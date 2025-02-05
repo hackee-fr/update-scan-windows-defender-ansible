@@ -1,0 +1,7 @@
+# group_vars/windows_client_group_vars.yaml
+
+ansible_connection: winrm                     # Utilisation de la connexion WinRM
+ansible_winrm_transport: ntlm                 # Transport WinRM : NTLM
+ansible_winrm_port: 5985                      # Port WinRM (HTTP)
+ansible_winrm_scheme: http                    # Utilisation du protocole HTTP
+ansible_winrm_server_cert_validation: ignore  # Ignorer la validation du certificat

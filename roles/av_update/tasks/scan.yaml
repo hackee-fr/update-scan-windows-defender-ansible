@@ -1,0 +1,9 @@
+---
+# tasks/scan.yaml
+- name: Lancer un scan rapide avec Windows Defender
+  win_command: powershell.exe -Command "Start-MpScan -ScanType QuickScan"
+  register: scan_result
+
+- name: Afficher le résultat du scan
+  debug:
+    msg: "Résultat du scan : {{ scan_result.stdout }}"

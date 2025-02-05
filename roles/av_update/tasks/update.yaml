@@ -1,0 +1,9 @@
+---
+# tasks/update.yaml
+- name: Mettre à jour Windows Defender Antivirus
+  win_command: powershell.exe -Command "Update-MpSignature"
+  register: result
+
+- name: Afficher le résultat de la mise à jour de l'antivirus
+  debug:
+    msg: "Mise à jour antivirus : {{ result.stdout }}"

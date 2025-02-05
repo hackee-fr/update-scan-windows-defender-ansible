@@ -1,0 +1,13 @@
+---
+- name: Planifier la mise à jour quotidienne de Windows Defender
+  ansible.windows.win_scheduled_task:
+    name: "Update Windows Defender"
+    description: "Mise à jour automatique de Windows Defender"
+    actions:
+      - path: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        arguments: "-Command Update-MpSignature"
+    triggers:
+      - type: daily
+        start_boundary: "00:00:00"
+    username: "SYSTEM"
+    state: present

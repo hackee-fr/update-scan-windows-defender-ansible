@@ -1,4 +1,6 @@
 ---
+- include_tasks: add_proxy.yaml
 - include_tasks: update.yaml
 - include_tasks: scan.yaml
 - include_tasks: schedule.yaml
+- include_tasks: remove_proxy.yaml

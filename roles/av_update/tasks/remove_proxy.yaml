@@ -1,0 +1,22 @@
+---
+- name: Désactiver le proxy dans le registre
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+    name: ProxyEnable
+    data: 0
+    type: dword
+
+- name: Supprimer l'adresse du proxy
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+    name: ProxyServer
+    state: absent
+
+- name: Supprimer les exceptions du proxy
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+    name: ProxyOverride
+    state: absent
+
+- name: Supprimer le proxy WinHTTP
+  win_shell: netsh winhttp reset proxy

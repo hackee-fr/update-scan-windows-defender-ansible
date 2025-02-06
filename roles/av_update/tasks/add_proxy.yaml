@@ -1,0 +1,36 @@
+---
+- name: Définir les variables de configuration proxy
+  set_fact:
+    proxy_server: "http://proxy.exemple.com:8080"
+    proxy_enabled: 1
+    proxy_override: "<local>"
+
+- name: Activer le proxy dans le registre
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+    name: ProxyEnable
+    data: "{{ proxy_enabled }}"
+    type: dword
+
+- name: Définir l'adresse du proxy
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+    name: ProxyServer
+    data: "{{ proxy_server }}"
+    type: string
+
+- name: Exclure les adresses locales du proxy
+  win_regedit:
+    path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+    name: ProxyOverride
+    data: "{{ proxy_override }}"
+    type: string
+
+- name: Configurer le proxy pour WinHTTP (Windows Update)
+  win_shell: netsh winhttp set proxy proxy-server="{{ proxy_server }}"
+
+- name: Configurer le proxy pour PowerShell
+  win_shell: |
+    [System.Net.WebRequest]::DefaultWebProxy = New-Object System.Net.WebProxy("{{ proxy_server }}")
+    [System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
+    [System.Net.WebRequest]::DefaultWebProxy.UseDefaultCredentials = $true

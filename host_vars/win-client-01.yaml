@@ -1,0 +1,4 @@
+# host_vars/win-client-01.yaml
+
+ansible_user: "Client 1"    # Nom d'utilisateur
+ansible_password: "client"  # Mot de passe

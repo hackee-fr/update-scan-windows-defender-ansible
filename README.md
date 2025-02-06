@@ -11,8 +11,8 @@ Ce projet utilise Ansible pour automatiser la mise à jour et le scan de **Windo
 - [Configuration](#configuration)
 - [Utilisation](#utilisation)
 - [Scripts supplémentaires](#scripts-supplémentaires)
-- [Contribuer](#contribuer)
-- [Licence](#licence)
+<!-- - [Contribuer](#contribuer)
+- [Licence](#licence) -->
 
 ## Prérequis
 

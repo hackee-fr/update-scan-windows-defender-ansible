@@ -1,6 +1,6 @@
 ---
 - name: Mise à jour Antivirus sur Windows
-  hosts: windows_clients
+  hosts: win-client-01
   gather_facts: yes
   roles:
     - av_update

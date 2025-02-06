@@ -84,15 +84,10 @@ Si vous n'avez pas encore installé Ansible, vous pouvez l'installer en suivant 
     Exemple :
 
     ```yaml
-    all:
+    windows_client_group_vars:
       hosts:
         win-client-01:
-          ansible_host: 192.168.1.100
-          ansible_user: Administrator
-          ansible_password: yourpassword
-          ansible_connection: winrm
-          ansible_winrm_transport: ntlm
-          ansible_winrm_server_cert_validation: ignore
+          ansible_host: 192.168.0.20  # Adresse IP de l'hôte
     ```
 
 2. **Group Variables (group_vars/windows_client_group_vars.yaml)** : 
@@ -134,7 +129,7 @@ Ce script configure et exécute les tâches nécessaires en fonction de votre en
 - **check_files.sh** : Vérifie si tous les fichiers nécessaires à l'exécution du playbook sont présents.
 - **run_playbook.sh** : Lance le playbook automatiquement, ce qui permet d'éviter de taper la commande manuellement.
 
-## Contribuer
+<!-- ## Contribuer
 
 Si vous souhaitez contribuer à ce projet, vous pouvez :
 
@@ -145,4 +140,4 @@ Si vous souhaitez contribuer à ce projet, vous pouvez :
 
 ## Licence
 
-Ce projet est sous la licence [MIT License](LICENSE).
+Ce projet est sous la licence [MIT License](LICENSE). -->

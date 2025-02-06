@@ -1,3 +1,4 @@
+# tasks/add_proxy.yaml
 ---
 - name: Définir les variables de configuration proxy
   set_fact:

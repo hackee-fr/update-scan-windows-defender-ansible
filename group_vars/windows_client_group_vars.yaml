@@ -1,5 +1,5 @@
 # group_vars/windows_client_group_vars.yaml
-
+---
 ansible_connection: winrm                     # Utilisation de la connexion WinRM
 ansible_winrm_transport: ntlm                 # Transport WinRM : NTLM
 ansible_winrm_port: 5985                      # Port WinRM (HTTP)

@@ -1,6 +1,7 @@
+# tasks/schedule.yaml
 ---
 - name: Planifier la mise à jour quotidienne de Windows Defender
-  ansible.windows.win_scheduled_task:
+  community.windows.win_scheduled_task:
     name: "Update Windows Defender"
     description: "Mise à jour automatique de Windows Defender"
     actions:
@@ -8,6 +9,6 @@
         arguments: "-Command Update-MpSignature"
     triggers:
       - type: daily
-        start_boundary: "00:00:00"
+        start_boundary: "2025-02-07T00:00:00"
     username: "SYSTEM"
     state: present

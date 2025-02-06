@@ -1,5 +1,5 @@
+# vars/main_vars.yaml
 ---
-# vars/main.yaml
 av_scan_type: "QuickScan"    # Type de scan, peut être ajusté
 av_update_command: "Update-MpSignature"   # Commande de mise à jour pour Windows Defender
 av_scan_command: "Start-MpScan -ScanType {{ av_scan_type }}"  # Commande de scan

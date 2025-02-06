@@ -1,3 +1,4 @@
+# tasks/remove_proxy.yaml
 ---
 - name: Désactiver le proxy dans le registre
   win_regedit:

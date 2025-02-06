@@ -9,6 +9,6 @@
         arguments: "-Command Update-MpSignature"
     triggers:
       - type: daily
-        start_boundary: "2025-02-07T00:00:00"
+        start_boundary: "00:00"
     username: "SYSTEM"
     state: present
